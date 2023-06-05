@@ -1,6 +1,6 @@
 
 import { Router } from "express";
-import {  registerUser, userLogin, userLogout } from "../controller/UserController.js";
+import { registerUser, userLogin, userLogout } from "../controller/UserController.js";
 import { validateAccessToken } from "../Authentication/jwtAuthentication.js";
 import { setResponse } from "../utility.js";
 
@@ -43,5 +43,9 @@ routerUser.patch('/api/users/logout/:username', userLogout);
 // Response:
 // - Success response with status code 200 and message "You made a Request"
 routerUser.get('/api/users/test', validateAccessToken, (req, res, next) => { setResponse(res, 200, "You made a Request") });
+
+router.get('/api/auth/refresh', (req, res, next) => {
+
+})
 
 export { routerUser };

@@ -67,4 +67,9 @@ const userLogout = async (req, res, next) => {
     }
 };
 
+
+const refreshToken = () =>{
+
+}
+
 export { userLogin, registerUser, userLogout };
